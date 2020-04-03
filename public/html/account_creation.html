@@ -1,0 +1,61 @@
+<html class="no-js" lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="js/create_account.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+    
+    <body onload="onload()">
+        <!--    Navbar  -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/info">Information</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/advanced_search">Advanced Search</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/about_me">About Me</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-success my-2 my-sm-0 horizontal-margin" type="submit">Login</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 horizontal-margin" type="submit">Create Account</button>
+                </form>
+            </div>
+        </nav>
+        <!--    Login   -->
+        <div id = "background-override" class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+                <form id="create_account_form" method="POST" name="create_account_form" style="background-color:#E6E6FA" class="col-8" onsubmit="javascript: validate_form(); return false;">
+                    <div class="form-group">
+                        <input pattern=".{8,}" type="text" id="username" name = "username" class="form-control" placeholder="Username" oninvalid="this.setCustomValidity('Enter a username of length 8')" oninput="this.setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group">
+                        <input pattern=".{8,}" type="text" id="password" name = "password" class="form-control" placeholder="Password" oninvalid="this.setCustomValidity('Enter a password of length 8')" oninput="this.setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group">
+                        <input pattern=".{2,}" type="text" id="first_name" name = "first_name" class="form-control" placeholder="First Name" oninvalid="this.setCustomValidity('Enter valid name please')" oninput="this.setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group">
+                        <input pattern=".{2,}" type="text" id="last_name" name ="last_name" class="form-control" placeholder="Last Name" oninvalid="this.setCustomValidity('Enter valid name please')" oninput="this.setCustomValidity('')" required>
+                    </div>
+                    <div class="form-group">
+                        <input id="email_field" name = "email_field" pattern=".{3,}" type="email" class="form-control" placeholder="Email" oninvalid="this.setCustomValidity('Enter valid email please')" oninput="this.setCustomValidity('')" required>
+                    </div>
+                    <input type="submit" id="submitBtn" style="display:none;">
+                    <button id="send" name="send" type="button" class="btn btn-dark btn-lg btn-block" onclick="validate_form()">Login</button>
+                </form>   
+            </div>
+        </div>
+        
+        
+    </body>
+</html>

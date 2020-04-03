@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="js/hash_file.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/home.css">
+    </head>
+
+    <body>
+        <!--    Navbar  -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/info">Information<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/advanced_search">Advanced Search<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/about_me">About Me<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-success my-2 my-sm-0 horizontal-margin" type="submit">Login</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0 horizontal-margin" type="submit">Create Account</button>
+                </form>
+            </div>
+        </nav>
+        <!--    search bar   -->
+        <form method="GET" action="database_query">
+            <div class="container mt-5 input-group mb-5">
+                <input name="file_name" type="text" class="form-control" placeholder="File name">
+                <select class = "custom-select" name="subject">
+                            <option value="Psychology">Psychology</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Art">Art</option>
+                            <option value="Math">Math</option>
+                            <option value="Geometry">Geometry</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="History">History</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Music">Music</option>
+                            <option value="English">English</option>
+                            <option value="Computer Science">Computer Science</option>
+                </select>
+                <button class="btn btn-light" method="GET" enctype="multipart/form-data" action="database_query" type="Submit">Search</button>
+            </div>
+        </form>
+        <!--    logo    -->
+        <img src="/images/icon/notepad.png" class="rounded mx-auto d-block image-margin" alt="Notepad image" style="width:200px;height:200px;">
+        <!--    Information    -->
+        <div class="container mt-3 info-text">
+        Noteshare is a website that allows users to share notes with peers electronically.  You can upload your notes and assign a subject and various tags
+        you want to be associated with your file.  Others can then search for notes using various parameters, such as file name, date uploaded, user uploaded,
+        rating, file extension, subject, and tags.  For more information, click on the information tab located on top.
+        </div>
+        <!-- Upload Form -->
+        <form id="upload_form" enctype = "multipart/form-data">
+            <div class="container mt-3">
+                    <div class="custom-file mb-3h">
+                        <input type="file" class="custom-file-input" name="uploaded_file">
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </div>
+            </div>
+            <div class="container mt-3">
+                <div class="input-group">    
+                    <select name="subject" class = custom-select>
+                            <option value="Psychology">Psychology</option>
+                            <option value="Physics">Physics</option>
+                            <option value="Art">Art</option>
+                            <option value="Math">Math</option>
+                            <option value="Geometry">Geometry</option>
+                            <option value="Chemistry">Chemistry</option>
+                            <option value="History">History</option>
+                            <option value="Biology">Biology</option>
+                            <option value="Music">Music</option>
+                            <option value="English">English</option>
+                            <option value="Computer Science">Computer Science</option>
+                    </select>
+                    <input type="text" class="form-control margin-right" name="info_tags" placeholder="Enter any tags to be associated with your file seperated by commas">
+                </div>
+            </div>
+            <div class="container mt-3">
+                <button type="button" class="btn btn-dark btn-lg btn-block" onclick=generate_hash()>Upload</button>
+            </div>
+            <div mt-5><br><br></div>
+        </form>
+        
+        <script>//used to have filename when added
+        $(".custom-file-input").on("change", function() {
+          var fileName = $(this).val().split("\\").pop();
+          $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+        </script>
+        
+    </body>
+    
+</html>		

@@ -1,0 +1,15 @@
+.image-margin{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.horizontal-margin{
+    margin-right:20px;
+    margin-left:20px;
+}
+.vertical-margin{
+    margin-top:2000px;
+    margin-bottom:30px;
+}
+.info-text{
+    font-size:25px;
+}
