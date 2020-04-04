@@ -10,7 +10,7 @@ Software: Parallel_Computing
 
 License: GNU AFFERO GENERAL PUBLIC LICENSE
 
-Licensor: z-ng
+Licensor: zac-ng
      
 -----------------------------------------------------------------------------------------------------------------------------------------
                     

@@ -8,5 +8,4 @@ The site can be viewed [here](https://2019znguyen_seniorproject.sites.tjhsst.edu
 
 An screenshot of the site can be seen below:
 
-![Example](https://raw.githubusercontent.com/z-ng/noteshare/main/example1.png)
-
+![Example](https://raw.githubusercontent.com/zac-ng/noteshare/main/example1.png)
